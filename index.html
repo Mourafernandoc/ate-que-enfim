@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girassol – Memórias que seguem o sol</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="sun-glow"></div>
+        <div class="hero-content">
+            <h1 class="fade-in">Girassol 🌻</h1>
+            <p class="fade-in">Algumas memórias continuam florindo, mesmo no silêncio.</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="comecos" class="content-section">
+            <h2 class="reveal">Os Começos</h2>
+            <p class="reveal">
+                Toda história tem um primeiro olhar, um riso perdido e uma vontade de ficar mais um pouco.<br>
+                Às vezes o destino começa num café, num abraço ou num simples ‘oi’.<br>
+                A gente só percebe depois que aquele instante virou memória.
+            </p>
+            <div class="photo-gallery reveal">
+                <img src="images/placeholder1.jpg" alt="Memória de um começo">
+                <img src="images/placeholder2.jpg" alt="Lembrança de um sorriso">
+                <img src="images/placeholder3.jpg" alt="Instante guardado">
+            </div>
+        </section>
+
+        <section id="momentos" class="content-section">
+            <h2 class="reveal">Nossos Momentos</h2>
+            <div class="carousel-container reveal">
+                <div class="carousel-slide">
+                    <div class="slide" style="background-image: url('images/carousel1.jpg');">
+                        <p class="slide-caption">Sorrisos que falavam mais que palavras.</p>
+                    </div>
+                    <div class="slide" style="background-image: url('images/carousel2.jpg');">
+                        <p class="slide-caption">Entre risadas e olhares, o tempo parava.</p>
+                    </div>
+                    <div class="slide" style="background-image: url('images/carousel3.jpg');">
+                        <p class="slide-caption">E o mundo fazia sentido em detalhes.</p>
+                    </div>
+                </div>
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </section>
+
+        <section id="o-que-ficou" class="content-section">
+             <div class="petal-container"></div>
+            <h2 class="reveal">O que Ficou</h2>
+            <p class="reveal">
+                O tempo muda muita coisa, mas o que foi verdadeiro permanece.<br>
+                O brilho de um olhar, o som de uma risada, a calma que vinha só de estar perto.<br>
+                Não é sobre voltar ao passado. É sobre lembrar o quanto foi real.
+            </p>
+        </section>
+
+        <section id="gratidao" class="content-section">
+            <h2 class="reveal">Gratidão</h2>
+            <p class="reveal">
+                Sou grato por cada instante, cada conversa e cada sorriso.<br>
+                Algumas histórias não precisam de final feliz pra serem eternas —<br>
+                basta que tenham sido verdadeiras.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>🌻 O sol sempre nasce onde há amor verdadeiro.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,298 @@
+/* --- Configurações Globais --- */
+:root {
+    --gold: #D4AF37;
+    --light-gray: #f4f4f4;
+    --dark-gray: #333;
+    --white: #ffffff;
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--dark-gray);
+    background-color: var(--white);
+    line-height: 1.8;
+    overflow-x: hidden;
+    background: var(--white) url('https://www.transparenttextures.com/patterns/light-paper-fibers.png'); /* Textura sutil de papel */
+}
+
+/* --- Cabeçalho e Efeito de Brilho --- */
+.hero {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--dark-gray);
+    position: relative;
+    overflow: hidden;
+    background-color: var(--light-gray);
+}
+
+.sun-glow {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 223, 100, 0.4), transparent 50%);
+    animation: rotateSun 30s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes rotateSun {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.hero-content {
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--gold);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-top: 0.5rem;
+}
+
+/* --- Estrutura das Seções --- */
+.content-section {
+    padding: 5rem 10%;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.content-section h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--gold);
+    position: relative;
+    display: inline-block;
+}
+
+.content-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background-color: var(--gold);
+}
+
+.content-section p {
+    font-size: 1.1rem;
+    color: #555;
+    font-weight: 300;
+}
+
+/* --- Seção 1: Os Começos --- */
+.photo-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.photo-gallery img {
+    width: 180px;
+    height: 220px;
+    object-fit: cover;
+    border: 5px solid var(--white);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-gallery img:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Seção 2: Carrossel --- */
+.carousel-container {
+    position: relative;
+    max-width: 800px;
+    margin: 2rem auto 0;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.slide-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--white);
+    padding: 1rem;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+.carousel-container .prev,
+.carousel-container .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 1rem;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-container .prev:hover,
+.carousel-container .next:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.prev {
+    left: 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.next {
+    right: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+/* --- Seção 3: Animação de Pétalas --- */
+#o-que-ficou {
+    background-color: var(--light-gray);
+    overflow: hidden;
+}
+
+.petal-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.petal {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(212, 175, 55, 0.7);
+    border-radius: 0 50% 0 50%;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* --- Rodapé --- */
+footer {
+    text-align: center;
+    padding: 2.5rem;
+    background-color: var(--light-gray);
+    color: #777;
+    font-weight: 300;
+}
+
+/* --- Animações de Fade-in e Scroll Reveal --- */
+.fade-in {
+    animation: fadeInAnimation 1.5s ease-in forwards;
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .content-section {
+        padding: 4rem 5%;
+    }
+
+    .content-section h2 {
+        font-size: 2rem;
+    }
+
+    .photo-gallery img {
+        width: 150px;
+        height: 180px;
+    }
+}
