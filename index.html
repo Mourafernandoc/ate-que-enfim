@@ -31,6 +31,62 @@
             line-height: 1.8; /* Mais espaçamento para leitura */
         }
 
+        /* --- NOVOS ESTILOS PARA PROTEÇÃO POR SENHA --- */
+
+        #prompt-senha {
+            /* A tela de senha precisa ocupar a tela inteira */
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #3a2d0b; /* Fundo igual ao body */
+            padding: 20px;
+        }
+
+        #prompt-senha h1 {
+            color: #FFC300;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        #pin-input {
+            padding: 10px;
+            margin: 15px 0;
+            font-size: 1.5rem;
+            text-align: center;
+            border: 2px solid #FFC300;
+            background: #1a1a1a;
+            color: #fdfaf0;
+            border-radius: 8px;
+            max-width: 200px;
+        }
+
+        #pin-button {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background-color: #FFC300;
+            color: #3a2d0b;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #pin-button:hover {
+            background-color: #e0ac00;
+        }
+
+        #carta-protegida {
+            /* O conteúdo da carta estará escondido por padrão */
+            display: none; 
+        }
+
+        /* --- Seus estilos originais da carta --- */
+
         /* Cada "Bloco" da página */
         .section {
             min-height: 100vh;
@@ -156,101 +212,136 @@
     </style>
 </head>
 <body>
-    <section class="section text-block">
-        <p classs="fade-in">Eu quero começar essa carta dizendo que não é justo... você me manda mensagem, fala o que você quer e me bloqueou... sem me dar direito de resposta... e a minha é essa...</p>
-    </section>
 
-    <section class="section image-block-sunflower">
-        <h2 class="fade-in">O Reencontro</h2>
-        <div class="text-block fade-in">
-            <p>Em primeiro lugar, devo dizer que quando eu quis te ver para falar dos sentimentos... na verdade, eu queria te ver para saber como que você estava, não queria me declarar... eu queria encontrar aquela Nadjeshda que estava conversando comigo no WhatsApp... prática, direta, sem emoção... mas eu não encontrei ela... encontrei uma Nadjeschda emotiva, com o coração aberto e com brilho no olhar... diferente das fotos do Instagram, diferente das últimas conversas... mas eu vou te falar algumas coisas...</p>
-            <p>Quando começamos a conversar depois de um mês sem nenhuma notícia sua... e depois ver a notícia de que você iria se casar, estava me deixando ciente de que eu estava certo em te esquecer... mas quando eu comentei no seu status que tive o prazer de conhecer aquela versão doce e delicada sua, a primeira reação sua foi dizer que eu estava lindo no show... você normalmente me diria bonito ou algo mais simples... quando falei que queria te ver pessoalmente, você não hesitou em me encontrar no seu horário de almoço...</p>
-            <p>...admito que o que eu iria te dizer era algo totalmente diferente... eu não iria me declarar, eu queria ver como você estava, já que nas suas fotos de Insta e status eu não via mais o brilho no seu olhar, aquele jardim de girassóis que sempre brilham com o amanhecer... pelo contrário, era um sorriso triste, trancado, estressado...</p>
-            <p>...quando marquei de te buscar para o sushi... encontrei uma menina que estava com o escudo baixo, os portões abertos, o sorriso frouxo... e isso me despertou uma vontade para ver até onde esse sorriso nos levaria.</p>
-            <p>Você não me olhava mais com aquele olhar de indiferença ou desgosto... quando deixei você no carro e desliguei tudo e soltei o cinto... você sentiu o coração acelerar... você queria me dar aquele beijo... mas quando eu gritei dizendo que você ia ser minha, só para eu ver esse sorriso lindo ao meu lado todos os dias, você gostou....</p>
-        </div>
-    </section>
+    <div id="prompt-senha">
+        <h1>🔒 Você Tem a Chave?</h1>
+        <p style="font-size: 1.2rem; color: #fdfaf0;">Digite o PIN que eu te dei para abrir esta carta:</p>
+        <input type="password" id="pin-input">
+        <button id="pin-button" onclick="verificarSenha()">Abrir Carta</button>
+    </div>
 
-    <section class="section text-block">
-        <h2 class="fade-in">A Nossa Verdade</h2>
-        <div class="fade-in">
-            <p>Você mudou, na sua vida que você achava que estava fazendo algo errado, de repente aceitar meu convite, aceitar sair comigo era o certo e talvez aceitar o beijo também, mas achou melhor passar.</p>
-            <p>Eu não duvido o que você sente, não entendo na verdade porque não é comigo, mas o que você tem hoje não é amor e você sabe, você não teria dúvidas depois de 4 meses já passados te abalarem assim.</p>
-            <p>Você se conhece e eu te conheço, você iria se abalar assim? Se já não houvesse dúvidas no que você anda fazendo? Não vou pontuar pontos negativos no seu relacionamento, até porque isso não condiz a mim, mas você sabe que entre nós existiam e existem mais positivos que negativos.</p>
-            <p>Em momento algum você me deu esperança, pelo contrário, você sempre foi incisiva em dizer que estava em um relacionamento, porém quando você conversava comigo você não estava me dando esperanças e sim vendo uma esperança para a gente.</p>
-            <p>Quando voltamos a conversar após esse tempo, quando paramos de ser funcionais e fomos nós mesmos nas conversas, você também percebeu que aquilo te faz falta, alguém que você pode falar de tudo sobre tudo e que ele nunca irá te julgar, apenas te apoiar e dizer que segurará sua mão até o fim... das brincadeiras até as cantadas, você sentia falta... mas vamos voltar um pouco, eu quero te mostrar algumas coisas.</p>
-        </div>
+    <div id="carta-protegida">
         
-        <div class="fade-in music-player">
-            <iframe style="border-radius:12px" 
-                src="httpsS://open.spotify.com/embed/track/SEU-LINK-DA-MUSICA?utm_source=generator" 
-                width="100%" 
-                height="80" 
-                frameBorder="0" 
-                allowfullscreen="" 
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                loading="lazy">
-            </iframe>
-        </div>
-    </section>
+        <section class="section text-block">
+            <p classs="fade-in">Eu quero começar essa carta dizendo que não é justo... você me manda mensagem, fala o que você quer e me bloqueou... sem me dar direito de resposta... e a minha é essa...</p>
+        </section>
 
-    <section class="section text-block">
-        <h2 class="fade-in">Nosso Arquivo de Memórias</h2>
-        <div class="fade-in text-block">
-            <p>Quando eu te vi pessoalmente, quando rimos juntos no barsinho, quando eu te respeitei além da conta no carro, quando eu te convidava para meu apartamento por conta do frio, quando você aceitou ir para meu apartamento por conta do fogo, quando tomávamos vinho, quando bebíamos mais de 6 garrafas de cerveja, e mesmo assim íamos fazer compras, comigo falando para a moça do caixa o quanto você é linda, ou de quando você ia para festas de formatura e estava um tédio porque eu não estava lá com você...</p>
-            <p>...quando comemorávamos nosso mesversário com uma cesta de café da manhã, ou um pedido de namoro, ou pedido de casamento, quando você tinha a iniciativa para qualquer aventura e eu só segurava sua mão e íamos, quando empurrava carrinho na parada gay, quando dormíamos no sofá agarrados tentando assistir TV, e eu assistia e você ria com as piadas da TV sem saber, rsrs...</p>
-            <p>...quando sem pretensão nenhuma de ir para a academia nós fazíamos amor no meio da cozinha e depois íamos à academia com as pernas tremendo porque fizemos o cardio em casa, quando tentamos aumentar nossos laços comprando presente um para o outro igual, como aquelas camisetas, ou quando você queria que eu fosse diferente comprando roupas para mim... e eu querendo que você continuasse sendo sempre você mesma tirando sua roupa...</p>
-            <p>...quando você chorava comigo quando você tentava tomar remédio (sim, eu tenho esse vídeo guardado), quando você dançava funk rebolando a raba junto com a minha filha, quando você conversava com a minha mãe na mesa da cozinha, quando tirava um trago do cigarro da Bruna quando o álcool batia, ou quando você virava a noite bebendo e dançando com meu pai...</p>
-            <p>...quando juntos decidimos um ajudar o outro com os meninos, como no dia que a Suzany ligou para você para avisar que tinha virado mocinha... ou o Felipe que com uma semana de me conhecer pediu para eu adotar ele, Pyetro que quis ser meu amigo... o Thiago que tem amor, carinho e admiração por você até hoje, ou o meu filho o Nicolas que até hoje eu fico aliviado em ter tirado ele de Cavalcante pelos maus-tratos que ele sofria...</p>
-            <p>...o tanto que você ficou forte com o tempo e você não viu... quando nos conhecemos você estava dedicada em terminar o curso de técnica de enfermagem... e aí veio a faculdade... e hoje uma das recrutadoras mais humanizadas que existem no LinkedIn, uma menina que mal conseguia dormir, pois à noite sentia fortes crises de ansiedade, mas você como sempre forte que é superou (pelo menos naquela intensidade, mas eu sei que ainda sente).</p>
-        </div>
-    </section>
+        <section class="section image-block-sunflower">
+            <h2 class="fade-in">O Reencontro</h2>
+            <div class="text-block fade-in">
+                <p>Em primeiro lugar, devo dizer que quando eu quis te ver para falar dos sentimentos... na verdade, eu queria te ver para saber como que você estava, não queria me declarar... eu queria encontrar aquela Nadjeshda que estava conversando comigo no WhatsApp... prática, direta, sem emoção... mas eu não encontrei ela... encontrei uma Nadjeschda emotiva, com o coração aberto e com brilho no olhar... diferente das fotos do Instagram, diferente das últimas conversas... mas eu vou te falar algumas coisas...</p>
+                <p>Quando começamos a conversar depois de um mês sem nenhuma notícia sua... e depois ver a notícia de que você iria se casar, estava me deixando ciente de que eu estava certo em te esquecer... mas quando eu comentei no seu status que tive o prazer de conhecer aquela versão doce e delicada sua, a primeira reação sua foi dizer que eu estava lindo no show... você normalmente me diria bonito ou algo mais simples... quando falei que queria te ver pessoalmente, você não hesitou em me encontrar no seu horário de almoço...</p>
+                <p>...admito que o que eu iria te dizer era algo totalmente diferente... eu não iria me declarar, eu queria ver como você estava, já que nas suas fotos de Insta e status eu não via mais o brilho no seu olhar, aquele jardim de girassóis que sempre brilham com o amanhecer... pelo contrário, era um sorriso triste, trancado, estressado...</p>
+                <p>...quando marquei de te buscar para o sushi... encontrei uma menina que estava com o escudo baixo, os portões abertos, o sorriso frouxo... e isso me despertou uma vontade para ver até onde esse sorriso nos levaria.</p>
+                <p>Você não me olhava mais com aquele olhar de indiferença ou desgosto... quando deixei você no carro e desliguei tudo e soltei o cinto... você sentiu o coração acelerar... você queria me dar aquele beijo... mas quando eu gritei dizendo que você ia ser minha, só para eu ver esse sorriso lindo ao meu lado todos os dias, você gostou....</p>
+            </div>
+        </section>
 
-    <section class="section image-block-golden">
-        <h2 class="fade-in">Quem Eu Vejo em Você</h2>
-        <div class="fade-in text-block">
-            <p>E um dos meus maiores orgulhos, que ganhou até um certificado... a melhor mãe, a mãe carinhosa, a mãe amável, a mãe sem paciência, a mesma mãe que cuida, que ensina, que faz tudo para que o seu filho não diga "eu queria, mas minha mãe não me deu". Você se desdobra em quantas forem preciso para defender os seus...</p>
-            <p>A importância que você tinha com seu trabalho... você luta, você batalha, e se emociona quando recebe um elogio de um bom trabalho, quer evoluir sempre e sempre mais... (que lembro como chorou emocionada) e saber como seu trabalho é importante para você e satisfatório para mim.</p>
-            <p>Posso ficar horas e horas aqui falando de você... porque foram anos de entrega, anos de dedicação... infelizmente houveram algumas perdas, mas sabemos que nada é por acaso e você sabe disso, afinal sua religião te mostra isso, te deixa forte e brilhante... como o dia que você se sentiu realizada ao fazer sua coroação, que foi um dos dias mais importantes e emocionantes para você...</p>
-            <p>Quando você estava sozinha no escuro e eu segurando suas mãos... eu apenas fiz você lembrar de quem você é... a menina que sempre foi forte, corajosa, que é uma, mas nunca está só... Você tinha razão quando falou que foi uma loucura um estádio lotado com tantas pessoas nós nos encontrarmos, mas eu sei o que eu queria... e sei que você estava lá e pensando o tempo todo em mim...</p>
-            <p>...seja no bom dia querendo saber se você dormiu bem... ou se almoçou direito... se sentiu "dump" por comer algum doce diferente... ou se está vestindo aquela camisola vermelha que sempre pensa em mim, pois uma coisa eu fiz, faço e sempre vou fazer... te elogiar... não só pela beleza, mas por todo o conjunto... mulher, mãe, amiga, parceira, companheira, "coach" e médica particular (por sinal preciso fazer um check-up, quando podemos marcar?).</p>
-        </div>
-    </section>
-    
-    <section class="section text-block">
-        <h2 class="fade-in">Aquele Brilho Dourado</h2>
-        <div class="fade-in text-block">
-            <p>Quando você aceitou viver aquele déjà vu comigo te buscando... algo mudou em você em relação à minha pessoa, ficou nítido, seu olhar mudou... sua fala, seus gestos, tudo ficou diferente... e adivinha... até aquele momento eu não tinha intenção nenhuma de querer você... mas sabe o que aconteceu? Eu me apaixonei de novo... fiquei encantado com aquela menina brincalhona, assustada, um pouco comilona...</p>
-            <p>...músicas que contam a minha história, a sua história... mas todas contam a nossa história, mesmo que você tente colocar outros personagens, a história é nossa.</p>
-            <p>Não sou de acreditar em destino... por isso eu acho que me apaixonei novamente por você... você nunca me deu esperanças... mas você nunca escondeu que ainda sente algo por mim, sua confusão deixava isso claro... primeiro a sensação de estar fazendo coisas erradas, depois a confusão por me ver uma noite depois de tanto tempo... e por último o cancelamento do casamento... se isso não tivesse acontecido eu não me apaixonaria de novo...</p>
-            <p>Quando te busquei na parada... fiz exatamente o que seu coração me pediu para fazer, te dei o que faz os seus olhos sorrirem, pois isso era o que estava faltando naquele momento... a leveza do nosso amor.</p>
-            <p>Admito que fiquei muito admirado após nosso almoço, você teve todas as chances de sair e ir para o escritório... porém preferiu ficar ali do meu lado... aquilo mostrou o quanto você estava mudada comigo... e quando você mencionou do tático que estava juntando a gente novamente... você estava mostrando o quanto aquele sentimento ainda está vivo em você...</p>
-            <p>Não me equivoquei quando me chamava de amor no mercado... pois como nosso amor sempre foi, natural e leve... e no meio da sua sala quando me entregou o copo d'água, mencionando o quanto o filho (Nicolas) se parece com o pai (eu), você me olhou com aquele brilho dourado de uma autêntica filha de Oxum tem... e peguei na sua mão... eu sentia o seu coração batendo mais acelerado que o normal, quando me aproximei você ficou vermelha... mas o destino quis nos acalmar fazendo os meninos aparecerem... e não adianta disfarçar, você ficou com um olhar de boba quando eles vieram me abraçar, você sentiu também o amor que eles sentem por mim e viu o quão grande ele é.</p>
-            <p>Então eu não estou te pressionando, nem tenho essa vontade, pois você sabe que eu não gosto de nada forçado, mas pensa comigo... por que deixar esse amor tão lindo trazer tanta confusão para duas pessoas?</p>
-            <p>Eu admito, não sou o Fernando que você conheceu... tem muito dele em mim ainda, mas tem muito mais que eu quero te mostrar... quero que comigo você volte a sorrir com o olhar, tenha leveza no seu caminho e que juntos nós conseguiremos realizar os nossos sonhos de forma coesa, de forma concreta... eu não vou te falar nada, mas...</p>
-        </div>
-    </section>
+        <section class="section text-block">
+            <h2 class="fade-in">A Nossa Verdade</h2>
+            <div class="fade-in">
+                <p>Você mudou, na sua vida que você achava que estava fazendo algo errado, de repente aceitar meu convite, aceitar sair comigo era o certo e talvez aceitar o beijo também, mas achou melhor passar.</p>
+                <p>Eu não duvido o que você sente, não entendo na verdade porque não é comigo, mas o que você tem hoje não é amor e você sabe, você não teria dúvidas depois de 4 meses já passados te abalarem assim.</p>
+                <p>Você se conhece e eu te conheço, você iria se abalar assim? Se já não houvesse dúvidas no que você anda fazendo? Não vou pontuar pontos negativos no seu relacionamento, até porque isso não condiz a mim, mas você sabe que entre nós existiam e existem mais positivos que negativos.</p>
+                <p>Em momento algum você me deu esperança, pelo contrário, você sempre foi incisiva em dizer que estava em um relacionamento, porém quando você conversava comigo você não estava me dando esperanças e sim vendo uma esperança para a gente.</p>
+                <p>Quando voltamos a conversar após esse tempo, quando paramos de ser funcionais e fomos nós mesmos nas conversas, você também percebeu que aquilo te faz falta, alguém que você pode falar de tudo sobre tudo e que ele nunca irá te julgar, apenas te apoiar e dizer que segurará sua mão até o fim... das brincadeiras até as cantadas, você sentia falta... mas vamos voltar um pouco, eu quero te mostrar algumas coisas.</p>
+            </div>
+            
+            <div class="fade-in music-player">
+                <iframe style="border-radius:12px" 
+                    src="https://open.spotify.com/embed/track/6Uq4d1kO9b7E0rXv5g9V1L?utm_source=generator" 
+                    width="100%" 
+                    height="80" 
+                    frameBorder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy">
+                </iframe>
+            </div>
+            </section>
 
-    <section class="section climax-block">
-        <h2 class="fade-in">"Vamos quebrar comigo essa geleira do tempo em que o nosso amor ficou? Afinal, essa carta aberta é para pensar em nós mesmos... porque o que você vai fazer quando perceber que o jeito não bate mais com o seu, e ver que as razões que impedem de estar comigo é só uma questão de querer?</h2>
-        <h2 class="fade-in">...eu já vou falando logo: eu ainda te quero. Se for questão de tempo, eu te espero, falando sério... aquele encontro no estádio foi armado pelos anjos da paixão... e olha a gente aqui...</h2>
-        <h2 class="fade-in">...escuta a nossa música... dança comigo pela primeira vez... como há 3 anos e 3 meses..."</h2>
-    </section>
+        <section class="section text-block">
+            <h2 class="fade-in">Nosso Arquivo de Memórias</h2>
+            <div class="fade-in text-block">
+                <p>Quando eu te vi pessoalmente, quando rimos juntos no barsinho, quando eu te respeitei além da conta no carro, quando eu te convidava para meu apartamento por conta do frio, quando você aceitou ir para meu apartamento por conta do fogo, quando tomávamos vinho, quando bebíamos mais de 6 garrafas de cerveja, e mesmo assim íamos fazer compras, comigo falando para a moça do caixa o quanto você é linda, ou de quando você ia para festas de formatura e estava um tédio porque eu não estava lá com você...</p>
+                <p>...quando comemorávamos nosso mesversário com uma cesta de café da manhã, ou um pedido de namoro, ou pedido de casamento, quando você tinha a iniciativa para qualquer aventura e eu só segurava sua mão e íamos, quando empurrava carrinho na parada gay, quando dormíamos no sofá agarrados tentando assistir TV, e eu assistia e você ria com as piadas da TV sem saber, rsrs...</p>
+                <p>...quando sem pretensão nenhuma de ir para a academia nós fazíamos amor no meio da cozinha e depois íamos à academia com as pernas tremendo porque fizemos o cardio em casa, quando tentamos aumentar nossos laços comprando presente um para o outro igual, como aquelas camisetas, ou quando você queria que eu fosse diferente comprando roupas para mim... e eu querendo que você continuasse sendo sempre você mesma tirando sua roupa...</p>
+                <p>...quando você chorava comigo quando você tentava tomar remédio (sim, eu tenho esse vídeo guardado), quando você dançava funk rebolando a raba junto com a minha filha, quando você conversava com a minha mãe na mesa da cozinha, quando tirava um trago do cigarro da Bruna quando o álcool batia, ou quando você virava a noite bebendo e dançando com meu pai...</p>
+                <p>...quando juntos decidimos um ajudar o outro com os meninos, como no dia que a Suzany ligou para você para avisar que tinha virado mocinha... ou o Felipe que com uma semana de me conhecer pediu para eu adotar ele, Pyetro que quis ser meu amigo... o Thiago que tem amor, carinho e admiração por você até hoje, ou o meu filho o Nicolas que até hoje eu fico aliviado em ter tirado ele de Cavalcante pelos maus-tratos que ele sofria...</p>
+                <p>...o tanto que você ficou forte com o tempo e você não viu... quando nos conhecemos você estava dedicada em terminar o curso de técnica de enfermagem... e aí veio a faculdade... e hoje uma das recrutadoras mais humanizadas que existem no LinkedIn, uma menina que mal conseguia dormir, pois à noite sentia fortes crises de ansiedade, mas você como sempre forte que é superou (pelo menos naquela intensidade, mas eu sei que ainda sente).</p>
+            </div>
+        </section>
 
-    <section class="section outro-block">
-        <h2 class="fade-in">A Conclusão</h2>
-        <p class="fade-in">E se ainda tem dúvidas, responda essas perguntas, mas com o coração, e me diz que não sou eu que vem na sua mente para respondê-las...</p>
-        <ul class="question-list fade-in">
-            <li><strong>Primeira:</strong> Você pode contar para ele tudo o que quiser?</li>
-            <li><strong>Segunda:</strong> Ele é gentil?</li>
-            <li><strong>Terceira:</strong> Ele te ajuda a virar a melhor versão de si mesma?</li>
-            <li><strong>Quarta:</strong> Você imagina ele como pai dos seus filhos? (Essa nem precisa de resposta)</li>
-        </ul>
-        <p class="fade-in" style="margin-top: 30px; font-style: italic;">Acho que acabou o meu desabafo...</p>
-    </section>
+        <section class="section image-block-golden">
+            <h2 class="fade-in">Quem Eu Vejo em Você</h2>
+            <div class="fade-in text-block">
+                <p>E um dos meus maiores orgulhos, que ganhou até um certificado... a melhor mãe, a mãe carinhosa, a mãe amável, a mãe sem paciência, a mesma mãe que cuida, que ensina, que faz tudo para que o seu filho não diga "eu queria, mas minha mãe não me deu". Você se desdobra em quantas forem preciso para defender os seus...</p>
+                <p>A importância que você tinha com seu trabalho... você luta, você batalha, e se emociona quando recebe um elogio de um bom trabalho, quer evoluir sempre e sempre mais... (que lembro como chorou emocionada) e saber como seu trabalho é importante para você e satisfatório para mim.</p>
+                <p>Posso ficar horas e horas aqui falando de você... porque foram anos de entrega, anos de dedicação... infelizmente houveram algumas perdas, mas sabemos que nada é por acaso e você sabe disso, afinal sua religião te mostra isso, te deixa forte e brilhante... como o dia que você se sentiu realizada ao fazer sua coroação, que foi um dos dias mais importantes e emocionantes para você...</p>
+                <p>Quando você estava sozinha no escuro e eu segurando suas mãos... eu apenas fiz você lembrar de quem você é... a menina que sempre foi forte, corajosa, que é uma, mas nunca está só... Você tinha razão quando falou que foi uma loucura um estádio lotado com tantas pessoas nós nos encontrarmos, mas eu sei o que eu queria... e sei que você estava lá e pensando o tempo todo em mim...</p>
+                <p>...seja no bom dia querendo saber se você dormiu bem... ou se almoçou direito... se sentiu "dump" por comer algum doce diferente... ou se está vestindo aquela camisola vermelha que sempre pensa em mim, pois uma coisa eu fiz, faço e sempre vou fazer... te elogiar... não só pela beleza, mas por todo o conjunto... mulher, mãe, amiga, parceira, companheira, "coach" e médica particular (por sinal preciso fazer um check-up, quando podemos marcar?).</p>
+            </div>
+        </section>
+        
+        <section class="section text-block">
+            <h2 class="fade-in">Aquele Brilho Dourado</h2>
+            <div class="fade-in text-block">
+                <p>Quando você aceitou viver aquele déjà vu comigo te buscando... algo mudou em você em relação à minha pessoa, ficou nítido, seu olhar mudou... sua fala, seus gestos, tudo ficou diferente... e adivinha... até aquele momento eu não tinha intenção nenhuma de querer você... mas sabe o que aconteceu? Eu me apaixonei de novo... fiquei encantado com aquela menina brincalhona, assustada, um pouco comilona...</p>
+                <p>...músicas que contam a minha história, a sua história... mas todas contam a nossa história, mesmo que você tente colocar outros personagens, a história é nossa.</p>
+                <p>Não sou de acreditar em destino... por isso eu acho que me apaixonei novamente por você... você nunca me deu esperanças... mas você nunca escondeu que ainda sente algo por mim, sua confusão deixava isso claro... primeiro a sensação de estar fazendo coisas erradas, depois a confusão por me ver uma noite depois de tanto tempo... e por último o cancelamento do casamento... se isso não tivesse acontecido eu não me apaixonaria de novo...</p>
+                <p>Quando te busquei na parada... fiz exatamente o que seu coração me pediu para fazer, te dei o que faz os seus olhos sorrirem, pois isso era o que estava faltando naquele momento... a leveza do nosso amor.</p>
+                <p>Admito que fiquei muito admirado após nosso almoço, você teve todas as chances de sair e ir para o escritório... porém preferiu ficar ali do meu lado... aquilo mostrou o quanto você estava mudada comigo... e quando você mencionou do tático que estava juntando a gente novamente... você estava mostrando o quanto aquele sentimento ainda está vivo em você...</p>
+                <p>Não me equivoquei quando me chamava de amor no mercado... pois como nosso amor sempre foi, natural e leve... e no meio da sua sala quando me entregou o copo d'água, mencionando o quanto o filho (Nicolas) se parece com o pai (eu), você me olhou com aquele brilho dourado de uma autêntica filha de Oxum tem... e peguei na sua mão... eu sentia o seu coração batendo mais acelerado que o normal, quando me aproximei você ficou vermelha... mas o destino quis nos acalmar fazendo os meninos aparecerem... e não adianta disfarçar, você ficou com um olhar de boba quando eles vieram me abraçar, você sentiu também o amor que eles sentem por mim e viu o quão grande ele é.</p>
+                <p>Então eu não estou te pressionando, nem tenho essa vontade, pois você sabe que eu não gosto de nada forçado, mas pensa comigo... por que deixar esse amor tão lindo trazer tanta confusão para duas pessoas?</p>
+                <p>Eu admito, não sou o Fernando que você conheceu... tem muito dele em mim ainda, mas tem muito mais que eu quero te mostrar... quero que comigo você volte a sorrir com o olhar, tenha leveza no seu caminho e que juntos nós conseguiremos realizar os nossos sonhos de forma coesa, de forma concreta... eu não vou te falar nada, mas...</p>
+            </div>
+        </section>
 
+        <section class="section climax-block">
+            <h2 class="fade-in">"Vamos quebrar comigo essa geleira do tempo em que o nosso amor ficou? Afinal, essa carta aberta é para pensar em nós mesmos... porque o que você vai fazer quando perceber que o jeito não bate mais com o seu, e ver que as razões que impedem de estar comigo é só uma questão de querer?</h2>
+            <h2 class="fade-in">...eu já vou falando logo: eu ainda te quero. Se for questão de tempo, eu te espero, falando sério... aquele encontro no estádio foi armado pelos anjos da paixão... e olha a gente aqui...</h2>
+            <h2 class="fade-in">...escuta a nossa música... dança comigo pela primeira vez... como há 3 anos e 3 meses..."</h2>
+        </section>
 
+        <section class="section outro-block">
+            <h2 class="fade-in">A Conclusão</h2>
+            <p class="fade-in">E se ainda tem dúvidas, responda essas perguntas, mas com o coração, e me diz que não sou eu que vem na sua mente para respondê-las...</p>
+            <ul class="question-list fade-in">
+                <li><strong>Primeira:</strong> Você pode contar para ele tudo o que quiser?</li>
+                <li><strong>Segunda:</strong> Ele é gentil?</li>
+                <li><strong>Terceira:</strong> Ele te ajuda a virar a melhor versão de si mesma?</li>
+                <li><strong>Quarta:</strong> Você imagina ele como pai dos seus filhos? (Essa nem precisa de resposta)</li>
+            </ul>
+            <p class="fade-in" style="margin-top: 30px; font-style: italic;">Acho que acabou o meu desabafo...</p>
+        </section>
+
+    </div> 
     <script>
+        // --- NOVO SCRIPT PARA VERIFICAÇÃO DE SENHA ---
+        function verificarSenha() {
+            // ⚠️ ALtere "1234" pela senha/PIN que você quer usar!
+            const SENHA_CORRETA = "1234";
+            const senhaDigitada = document.getElementById("pin-input").value;
+
+            if (senhaDigitada === SENHA_CORRETA) {
+                // Se a senha estiver correta, mostra a carta e esconde o prompt
+                document.getElementById("prompt-senha").style.display = 'none';
+                document.getElementById("carta-protegida").style.display = 'block';
+
+                // Dispara o scroll para o topo da carta
+                window.scrollTo(0, 0);
+
+                // Opcional: Aciona o fade-in para a primeira seção manualmente (já que a primeira pode já estar no topo da tela)
+                document.querySelector('.section .fade-in').classList.add('is-visible');
+
+            } else {
+                // Se a senha estiver incorreta
+                alert("PIN Incorreto. Tente Novamente!");
+            }
+        }
+        
+        // --- SEU SCRIPT ORIGINAL DE INTERSECTION OBSERVER (Fade-in) ---
+
         // Seleciona todos os elementos que queremos animar
         const fadeElements = document.querySelectorAll('.fade-in');
 
