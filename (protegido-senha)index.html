@@ -214,7 +214,7 @@
 <body>
 
     <div id="prompt-senha">
-        <h1>🔒 Você tem a senha no seu coração (nosso dia)?</h1>
+        <h1>🔒 A senha é o nosso dia #XXXX?</h1>
         <p style="font-size: 1.2rem; color: #fdfaf0;">Digite o PIN que eu te dei para abrir esta carta:</p>
         <input type="password" id="pin-input">
         <button id="pin-button" onclick="verificarSenha()">Abrir Carta</button>
@@ -222,10 +222,6 @@
 
     <div id="carta-protegida">
         
-        <audio id="musicaFundo" loop>
-            <source src="musica.mp3" type="audio/mpeg">
-            Seu navegador não suporta o elemento de áudio.
-        </audio>
         <section class="section text-block">
             <p classs="fade-in">Eu quero começar essa carta dizendo que não é justo... você me manda mensagem, fala o que você quer e me bloqueou... sem me dar direito de resposta... e a minha é essa...</p>
         </section>
@@ -253,7 +249,7 @@
             
             <div class="fade-in music-player">
                 <iframe style="border-radius:12px" 
-                    src="https://open.spotify.com/embed/track/10CqLqT3F8X9w7R249v9Iq" 
+                    src="https://open.spotify.com/embed/track/6Uq4d1kO9b7E0rXv5g9V1L?utm_source=generator" 
                     width="100%" 
                     height="80" 
                     frameBorder="0" 
@@ -321,36 +317,26 @@
 
     </div> 
     <script>
-        // --- SCRIPT PARA VERIFICAÇÃO DE SENHA E MÚSICA ---
+        // --- NOVO SCRIPT PARA VERIFICAÇÃO DE SENHA ---
         function verificarSenha() {
-            // ⚠️ ALtere "1808" pela senha/PIN que você quer usar!
+            // ⚠️ ALtere "1234" pela senha/PIN que você quer usar!
             const SENHA_CORRETA = "1808";
             const senhaDigitada = document.getElementById("pin-input").value;
-            
-            // Pega o elemento de áudio
-            const musica = document.getElementById("musicaFundo"); 
 
             if (senhaDigitada === SENHA_CORRETA) {
                 // Se a senha estiver correta, mostra a carta e esconde o prompt
                 document.getElementById("prompt-senha").style.display = 'none';
                 document.getElementById("carta-protegida").style.display = 'block';
 
-                // Tenta iniciar a música
-                musica.play().catch(error => {
-                    // O catch é importante para lidar com o bloqueio de 'autoplay' em alguns navegadores.
-                    console.error("Erro ao tentar tocar a música automaticamente:", error);
-                    // O usuário terá que interagir com o player do Spotify se o áudio de fundo for bloqueado.
-                });
-
                 // Dispara o scroll para o topo da carta
                 window.scrollTo(0, 0);
 
-                // Opcional: Aciona o fade-in para a primeira seção manualmente 
+                // Opcional: Aciona o fade-in para a primeira seção manualmente (já que a primeira pode já estar no topo da tela)
                 document.querySelector('.section .fade-in').classList.add('is-visible');
 
             } else {
                 // Se a senha estiver incorreta
-                alert("PIN Incorreto. Tente Novamente!");
+                alert("Não acredito que você esqueceu nosso dia?!");
             }
         }
         
