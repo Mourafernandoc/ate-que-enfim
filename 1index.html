@@ -28,12 +28,13 @@
             color: #fdfaf0; 
             font-family: 'Lato', sans-serif;
             font-weight: 300;
-            line-height: 1.8; 
+            line-height: 1.8; /* Mais espaçamento para leitura */
         }
 
-        /* --- ESTILOS NOVOS PARA SENHA, FOTOS E VÍDEO --- */
+        /* --- NOVOS ESTILOS PARA PROTEÇÃO POR SENHA --- */
 
         #prompt-senha {
+            /* A tela de senha precisa ocupar a tela inteira */
             height: 100vh;
             width: 100%;
             display: flex;
@@ -41,7 +42,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background-color: #3a2d0b; 
+            background-color: #3a2d0b; /* Fundo igual ao body */
             padding: 20px;
         }
 
@@ -80,89 +81,27 @@
         }
 
         #carta-protegida {
+            /* O conteúdo da carta estará escondido por padrão */
             display: none; 
         }
 
-        /* Estilo para a imagem e o player de VÍDEO na carta */
-        .carta-foto {
-            max-width: 100%; 
-            height: auto;
-            border-radius: 10px; 
-            margin: 0; /* Removido para o carrossel, mas mantido para o vídeo */
-            display: block; 
-            object-fit: cover;
-            width: 100%; 
-        }
+        /* --- Seus estilos originais da carta --- */
 
-        /* Container para centralizar e adicionar legenda */
-        .photo-container {
-            text-align: center;
-            margin-bottom: 20px;
-            max-width: 700px; 
-            width: 100%;
-            margin: 30px auto; /* Centraliza containers fora do carrossel */
-        }
-
-        .photo-caption {
-            font-style: italic;
-            font-size: 1rem;
-            color: #f0e6c0;
-            margin-top: 10px;
-        }
-        
-        /* --- CSS para o Carrossel (Horizontal Scrolling) --- */
-        .carousel-container {
-            display: flex;
-            overflow-x: auto;
-            /* Melhora o deslizamento no iOS */
-            -webkit-overflow-scrolling: touch; 
-            /* Remove a barra de rolagem (opcional) */
-            scrollbar-width: none; 
-            
-            padding: 20px 10px;
-            margin: 20px auto;
-            max-width: 100%; /* Largura total para melhor experiência */
-            
-            border-top: 2px solid #FFC30050;
-            border-bottom: 2px solid #FFC30050;
-            justify-content: flex-start; 
-        }
-
-        /* Esconder barra de rolagem no Chrome/Safari */
-        .carousel-container::-webkit-scrollbar {
-            display: none;
-        }
-
-        .carousel-container .photo-item {
-            flex-shrink: 0;
-            width: 300px; /* Largura padrão para cada foto do carrossel */
-            margin-right: 20px;
-            text-align: center;
-        }
-
-        .carousel-container .carta-foto {
-            width: 100%;
-            height: 250px; /* Altura uniforme para as fotos deslizáveis */
-            object-fit: cover;
-            margin: 0; 
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
-            border: 3px solid #FFC300; 
-        }
-
-        /* --- SEUS ESTILOS ORIGINAIS DE SEÇÃO --- */
-        
+        /* Cada "Bloco" da página */
         .section {
             min-height: 100vh;
             width: 100%;
-            padding: 10% 12%; 
+            padding: 10% 12%; /* Mais espaço nas laterais */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
+            /* Garante que as seções não se sobreponham */
             position: relative;
         }
 
+        /* --- O JavaScript (A Dinâmica) --- */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -174,51 +113,77 @@
             transform: translateY(0);
         }
 
+        /* --- Estilos dos Textos --- */
         .section h2 {
             font-family: 'Playfair Display', serif;
             font-size: 2.8rem;
             margin-bottom: 25px;
+            /* Cor Dourado Girassol */
             color: #FFC300;
         }
 
         .section p {
-            font-size: 1.25rem; 
+            font-size: 1.25rem; /* Texto um pouco maior */
             max-width: 800px;
             margin-bottom: 20px;
         }
         
+        /* Parágrafos com recuo, como na carta */
         .text-block p {
-            text-align: left; 
-            text-indent: 2em; 
+            text-align: left; /* Alinhamento de leitura */
+            text-indent: 2em; /* Parágrafo */
         }
 
+        /* Lista de memórias */
+        .memory-list {
+            list-style: none;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            line-height: 2.3;
+            font-style: italic;
+            /* Cor de marfim mais clara */
+            color: #f0e6c0;
+            margin-top: 20px;
+        }
+
+        /* --- Estilos dos Blocos de Imagem --- */
+
+        /* Bloco 1: Girassóis (Literalmente) */
         .image-block-sunflower {
+            /* IMAGEM DE TESTE - Girassol */
             background-image: linear-gradient(rgba(58, 46, 11, 0.7), rgba(58, 46, 11, 0.7)), url(https://images.unsplash.com/photo-1569922416040-d953a63b4b0e?w=1200&q=80);
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; 
+            background-attachment: fixed; /* Efeito Parallax */
         }
 
+        /* Bloco 2: Brilho Dourado (Abstrato) */
         .image-block-golden {
+            /* IMAGEM DE TESTE - Luz Dourada */
             background-image: linear-gradient(rgba(58, 46, 11, 0.7), rgba(58, 46, 11, 0.7)), url(https://images.unsplash.com/photo-1505330622279-283e18f0c9a0?w=1200&q=80);
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; 
+            background-attachment: fixed; /* Efeito Parallax */
         }
 
+        /* Bloco 3: O Clímax (Ouro Sólido) */
         .climax-block {
+            /* Fundo Dourado Girassol */
             background-color: #FFC300;
+            /* Texto escuro terroso */
             color: #3a2d0b;
         }
 
         .climax-block h2 {
             font-size: 3rem;
             font-style: italic;
-            color: #3a2d0b; 
+            color: #3a2d0b; /* Garante que o H2 aqui seja escuro */
         }
 
+        /* Bloco 4: O Final */
         .outro-block {
-            background-color: #1a1a1a; 
+            background-color: #1a1a1a; /* Um pouco mais escuro para o final */
         }
 
         .question-list {
@@ -230,18 +195,27 @@
         }
         .question-list li {
             margin: 15px 0;
-            color: #f0e6c0; 
+            color: #f0e6c0; /* Cor de marfim clara */
         }
         .question-list li strong {
-            color: #FFC300; 
+            color: #FFC300; /* Dourado */
         }
+
+        /* Player de música */
+        .music-player {
+            margin-top: 30px;
+            border-radius: 12px;
+            border: 2px solid #FFC300;
+            overflow: hidden; /* Para o iframe respeitar a borda */
+        }
+
     </style>
 </head>
 <body>
 
     <div id="prompt-senha">
-        <h1>🔒 Você Tem a Chave?</h1>
-        <p style="font-size: 1.2rem; color: #fdfaf0;">Digite o PIN que eu te dei para abrir esta carta:</p>
+        <h1>🔒 Você tem a senha no seu coração (nosso dia)?</h1>
+        <p style="font-size: 1.2rem; color: #fdfaf0;">Aumente o som ta bom ;) :</p>
         <input type="password" id="pin-input">
         <button id="pin-button" onclick="verificarSenha()">Abrir Carta</button>
     </div>
@@ -252,14 +226,8 @@
             <source src="musica.mp3" type="audio/mpeg">
             Seu navegador não suporta o elemento de áudio.
         </audio>
-
         <section class="section text-block">
             <p classs="fade-in">Eu quero começar essa carta dizendo que não é justo... você me manda mensagem, fala o que você quer e me bloqueou... sem me dar direito de resposta... e a minha é essa...</p>
-
-            <div class="photo-container fade-in">
-                <img src="imagens/abertura_1.jpg" alt="Foto de Abertura" class="carta-foto">
-                <p class="photo-caption">Descrição da foto de abertura...</p>
-            </div>
         </section>
 
         <section class="section image-block-sunflower">
@@ -267,21 +235,6 @@
             <div class="text-block fade-in">
                 <p>Em primeiro lugar, devo dizer que quando eu quis te ver para falar dos sentimentos... na verdade, eu queria te ver para saber como que você estava, não queria me declarar... eu queria encontrar aquela Nadjeshda que estava conversando comigo no WhatsApp... prática, direta, sem emoção... mas eu não encontrei ela... encontrei uma Nadjeschda emotiva, com o coração aberto e com brilho no olhar... diferente das fotos do Instagram, diferente das últimas conversas... mas eu vou te falar algumas coisas...</p>
                 <p>Quando começamos a conversar depois de um mês sem nenhuma notícia sua... e depois ver a notícia de que você iria se casar, estava me deixando ciente de que eu estava certo em te esquecer... mas quando eu comentei no seu status que tive o prazer de conhecer aquela versão doce e delicada sua, a primeira reação sua foi dizer que eu estava lindo no show... você normalmente me diria bonito ou algo mais simples... quando falei que queria te ver pessoalmente, você não hesitou em me encontrar no seu horário de almoço...</p>
-                
-                <div class="carousel-container fade-in">
-                    <div class="photo-item">
-                        <img src="imagens/reencontro_1.jpg" alt="Foto Reencontro 1" class="carta-foto">
-                        <p class="photo-caption">Aquele dia do sushi que mudou tudo (1/3)</p>
-                    </div>
-                    <div class="photo-item">
-                        <img src="imagens/reencontro_2.jpg" alt="Foto Reencontro 2" class="carta-foto">
-                        <p class="photo-caption">O sorriso frouxo no carro (2/3)</p>
-                    </div>
-                    <div class="photo-item">
-                        <img src="imagens/reencontro_3.jpg" alt="Foto Reencontro 3" class="carta-foto">
-                        <p class="photo-caption">A faísca que não podíamos negar (3/3)</p>
-                    </div>
-                </div>
                 <p>...admito que o que eu iria te dizer era algo totalmente diferente... eu não iria me declarar, eu queria ver como você estava, já que nas suas fotos de Insta e status eu não via mais o brilho no seu olhar, aquele jardim de girassóis que sempre brilham com o amanhecer... pelo contrário, era um sorriso triste, trancado, estressado...</p>
                 <p>...quando marquei de te buscar para o sushi... encontrei uma menina que estava com o escudo baixo, os portões abertos, o sorriso frouxo... e isso me despertou uma vontade para ver até onde esse sorriso nos levaria.</p>
                 <p>Você não me olhava mais com aquele olhar de indiferença ou desgosto... quando deixei você no carro e desliguei tudo e soltei o cinto... você sentiu o coração acelerar... você queria me dar aquele beijo... mas quando eu gritei dizendo que você ia ser minha, só para eu ver esse sorriso lindo ao meu lado todos os dias, você gostou....</p>
@@ -293,39 +246,26 @@
             <div class="fade-in">
                 <p>Você mudou, na sua vida que você achava que estava fazendo algo errado, de repente aceitar meu convite, aceitar sair comigo era o certo e talvez aceitar o beijo também, mas achou melhor passar.</p>
                 <p>Eu não duvido o que você sente, não entendo na verdade porque não é comigo, mas o que você tem hoje não é amor e você sabe, você não teria dúvidas depois de 4 meses já passados te abalarem assim.</p>
-                
-                <div class="photo-container fade-in">
-                    <img src="imagens/verdade_1.jpg" alt="Foto da Verdade" class="carta-foto">
-                    <p class="photo-caption">A foto que mostra a cumplicidade entre nós...</p>
-                </div>
-                
                 <p>Você se conhece e eu te conheço, você iria se abalar assim? Se já não houvesse dúvidas no que você anda fazendo? Não vou pontuar pontos negativos no seu relacionamento, até porque isso não condiz a mim, mas você sabe que entre nós existiam e existem mais positivos que negativos.</p>
                 <p>Em momento algum você me deu esperança, pelo contrário, você sempre foi incisiva em dizer que estava em um relacionamento, porém quando você conversava comigo você não estava me dando esperanças e sim vendo uma esperança para a gente.</p>
                 <p>Quando voltamos a conversar após esse tempo, quando paramos de ser funcionais e fomos nós mesmos nas conversas, você também percebeu que aquilo te faz falta, alguém que você pode falar de tudo sobre tudo e que ele nunca irá te julgar, apenas te apoiar e dizer que segurará sua mão até o fim... das brincadeiras até as cantadas, você sentia falta... mas vamos voltar um pouco, eu quero te mostrar algumas coisas.</p>
             </div>
-        </section>
+            
+            <div class="fade-in music-player">
+                <iframe style="border-radius:12px" 
+                    src="https://open.spotify.com/embed/track/10CqLqT3F8X9w7R249v9Iq" 
+                    width="100%" 
+                    height="80" 
+                    frameBorder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy">
+                </iframe>
+            </div>
+            </section>
 
         <section class="section text-block">
             <h2 class="fade-in">Nosso Arquivo de Memórias</h2>
-            
-            <div class="carousel-container fade-in">
-                <div class="photo-item">
-                    <img src="imagens/memorias_1.jpg" alt="Memória 1" class="carta-foto">
-                    <p class="photo-caption">O dia que fomos às compras/barsinho...</p>
-                </div>
-                <div class="photo-item">
-                    <img src="imagens/memorias_2.jpg" alt="Memória 2" class="carta-foto">
-                    <p class="photo-caption">Nosso mesversário/momento no sofá...</p>
-                </div>
-                <div class="photo-item">
-                    <img src="imagens/memorias_3.jpg" alt="Memória 3" class="carta-foto">
-                    <p class="photo-caption">As risadas na cozinha/academia...</p>
-                </div>
-                <div class="photo-item">
-                    <img src="imagens/memorias_4.jpg" alt="Memória 4" class="carta-foto">
-                    <p class="photo-caption">A família reunida/nosso apoio...</p>
-                </div>
-            </div>
             <div class="fade-in text-block">
                 <p>Quando eu te vi pessoalmente, quando rimos juntos no barsinho, quando eu te respeitei além da conta no carro, quando eu te convidava para meu apartamento por conta do frio, quando você aceitou ir para meu apartamento por conta do fogo, quando tomávamos vinho, quando bebíamos mais de 6 garrafas de cerveja, e mesmo assim íamos fazer compras, comigo falando para a moça do caixa o quanto você é linda, ou de quando você ia para festas de formatura e estava um tédio porque eu não estava lá com você...</p>
                 <p>...quando comemorávamos nosso mesversário com uma cesta de café da manhã, ou um pedido de namoro, ou pedido de casamento, quando você tinha a iniciativa para qualquer aventura e eu só segurava sua mão e íamos, quando empurrava carrinho na parada gay, quando dormíamos no sofá agarrados tentando assistir TV, e eu assistia e você ria com as piadas da TV sem saber, rsrs...</p>
@@ -340,17 +280,6 @@
             <h2 class="fade-in">Quem Eu Vejo em Você</h2>
             <div class="fade-in text-block">
                 <p>E um dos meus maiores orgulhos, que ganhou até um certificado... a melhor mãe, a mãe carinhosa, a mãe amável, a mãe sem paciência, a mesma mãe que cuida, que ensina, que faz tudo para que o seu filho não diga "eu queria, mas minha mãe não me deu". Você se desdobra em quantas forem preciso para defender os seus...</p>
-                
-                <div class="carousel-container fade-in">
-                    <div class="photo-item">
-                        <img src="imagens/em_voce_1.jpg" alt="Foto sobre ela 1" class="carta-foto">
-                        <p class="photo-caption">A mãe guerreira e dedicada (1/2)</p>
-                    </div>
-                    <div class="photo-item">
-                        <img src="imagens/em_voce_2.jpg" alt="Foto sobre ela 2" class="carta-foto">
-                        <p class="photo-caption">O dia da sua coroação/evolução profissional (2/2)</p>
-                    </div>
-                </div>
                 <p>A importância que você tinha com seu trabalho... você luta, você batalha, e se emociona quando recebe um elogio de um bom trabalho, quer evoluir sempre e sempre mais... (que lembro como chorou emocionada) e saber como seu trabalho é importante para você e satisfatório para mim.</p>
                 <p>Posso ficar horas e horas aqui falando de você... porque foram anos de entrega, anos de dedicação... infelizmente houveram algumas perdas, mas sabemos que nada é por acaso e você sabe disso, afinal sua religião te mostra isso, te deixa forte e brilhante... como o dia que você se sentiu realizada ao fazer sua coroação, que foi um dos dias mais importantes e emocionantes para você...</p>
                 <p>Quando você estava sozinha no escuro e eu segurando suas mãos... eu apenas fiz você lembrar de quem você é... a menina que sempre foi forte, corajosa, que é uma, mas nunca está só... Você tinha razão quando falou que foi uma loucura um estádio lotado com tantas pessoas nós nos encontrarmos, mas eu sei o que eu queria... e sei que você estava lá e pensando o tempo todo em mim...</p>
@@ -362,21 +291,6 @@
             <h2 class="fade-in">Aquele Brilho Dourado</h2>
             <div class="fade-in text-block">
                 <p>Quando você aceitou viver aquele déjà vu comigo te buscando... algo mudou em você em relação à minha pessoa, ficou nítido, seu olhar mudou... sua fala, seus gestos, tudo ficou diferente... e adivinha... até aquele momento eu não tinha intenção nenhuma de querer você... mas sabe o que aconteceu? Eu me apaixonei de novo... fiquei encantado com aquela menina brincalhona, assustada, um pouco comilona...</p>
-                
-                <div class="carousel-container fade-in">
-                    <div class="photo-item">
-                        <img src="imagens/brilho_dourado_1.jpg" alt="Foto Brilho Dourado 1" class="carta-foto">
-                        <p class="photo-caption">Aquele olhar, aquele dia (1/3)</p>
-                    </div>
-                    <div class="photo-item">
-                        <img src="imagens/brilho_dourado_2.jpg" alt="Foto Brilho Dourado 2" class="carta-foto">
-                        <p class="photo-caption">O abraço dos meninos e o amor que viram (2/3)</p>
-                    </div>
-                    <div class="photo-item">
-                        <img src="imagens/brilho_dourado_3.jpg" alt="Foto Brilho Dourado 3" class="carta-foto">
-                        <p class="photo-caption">A leveza do nosso amor (3/3)</p>
-                    </div>
-                </div>
                 <p>...músicas que contam a minha história, a sua história... mas todas contam a nossa história, mesmo que você tente colocar outros personagens, a história é nossa.</p>
                 <p>Não sou de acreditar em destino... por isso eu acho que me apaixonei novamente por você... você nunca me deu esperanças... mas você nunca escondeu que ainda sente algo por mim, sua confusão deixava isso claro... primeiro a sensação de estar fazendo coisas erradas, depois a confusão por me ver uma noite depois de tanto tempo... e por último o cancelamento do casamento... se isso não tivesse acontecido eu não me apaixonaria de novo...</p>
                 <p>Quando te busquei na parada... fiz exatamente o que seu coração me pediu para fazer, te dei o que faz os seus olhos sorrirem, pois isso era o que estava faltando naquele momento... a leveza do nosso amor.</p>
@@ -389,12 +303,6 @@
 
         <section class="section climax-block">
             <h2 class="fade-in">"Vamos quebrar comigo essa geleira do tempo em que o nosso amor ficou? Afinal, essa carta aberta é para pensar em nós mesmos... porque o que você vai fazer quando perceber que o jeito não bate mais com o seu, e ver que as razões que impedem de estar comigo é só uma questão de querer?</h2>
-            
-            <div class="photo-container fade-in">
-                <img src="imagens/climax_1.jpg" alt="Foto Clímax" class="carta-foto">
-                <p class="photo-caption" style="color: #3a2d0b;">Dançando juntos pela primeira vez (ou simbolizando nosso abraço).</p>
-            </div>
-            
             <h2 class="fade-in">...eu já vou falando logo: eu ainda te quero. Se for questão de tempo, eu te espero, falando sério... aquele encontro no estádio foi armado pelos anjos da paixão... e olha a gente aqui...</h2>
             <h2 class="fade-in">...escuta a nossa música... dança comigo pela primeira vez... como há 3 anos e 3 meses..."</h2>
         </section>
@@ -408,15 +316,6 @@
                 <li><strong>Terceira:</strong> Ele te ajuda a virar a melhor versão de si mesma?</li>
                 <li><strong>Quarta:</strong> Você imagina ele como pai dos seus filhos? (Essa nem precisa de resposta)</li>
             </ul>
-            
-            <div class="photo-container fade-in" style="max-width: 800px; margin-top: 50px;">
-                <video controls playsinline class="carta-foto" style="max-height: 500px; object-fit: contain;">
-                    <source src="imagens/video_conclusao.mp4" type="video/mp4">
-                    Seu navegador não suporta a reprodução de vídeo.
-                </video>
-                <p class="photo-caption" style="margin-top: 15px;">Assista a nossa conclusão. Eu te amo!</p>
-            </div>
-            
             <p class="fade-in" style="margin-top: 30px; font-style: italic;">Acho que acabou o meu desabafo...</p>
         </section>
 
@@ -424,50 +323,65 @@
     <script>
         // --- SCRIPT PARA VERIFICAÇÃO DE SENHA E MÚSICA ---
         function verificarSenha() {
-            // ⚠️ ALtere "1234" pela senha/PIN que você quer usar!
-            const SENHA_CORRETA = "1234";
+            // ⚠️ ALtere "1808" pela senha/PIN que você quer usar!
+            const SENHA_CORRETA = "1808";
             const senhaDigitada = document.getElementById("pin-input").value;
             
+            // Pega o elemento de áudio
             const musica = document.getElementById("musicaFundo"); 
 
             if (senhaDigitada === SENHA_CORRETA) {
-                // Se a senha estiver correta, mostra a carta, esconde o prompt e toca a música
+                // Se a senha estiver correta, mostra a carta e esconde o prompt
                 document.getElementById("prompt-senha").style.display = 'none';
                 document.getElementById("carta-protegida").style.display = 'block';
 
+                // Tenta iniciar a música
                 musica.play().catch(error => {
+                    // O catch é importante para lidar com o bloqueio de 'autoplay' em alguns navegadores.
                     console.error("Erro ao tentar tocar a música automaticamente:", error);
+                    // O usuário terá que interagir com o player do Spotify se o áudio de fundo for bloqueado.
                 });
 
+                // Dispara o scroll para o topo da carta
                 window.scrollTo(0, 0);
+
+                // Opcional: Aciona o fade-in para a primeira seção manualmente 
                 document.querySelector('.section .fade-in').classList.add('is-visible');
 
             } else {
+                // Se a senha estiver incorreta
                 alert("PIN Incorreto. Tente Novamente!");
             }
         }
         
         // --- SEU SCRIPT ORIGINAL DE INTERSECTION OBSERVER (Fade-in) ---
 
+        // Seleciona todos os elementos que queremos animar
         const fadeElements = document.querySelectorAll('.fade-in');
 
+        // Configurações do "observador"
         const observerOptions = {
-            root: null, 
+            root: null, // Observa em relação ao viewport
             rootMargin: '0px',
-            threshold: 0.15 
+            threshold: 0.15 // Aciona quando 15% do elemento está visível (mais sensível)
         };
 
+        // A função que será chamada quando um elemento entrar na tela
         function handleIntersection(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
+                    // Adiciona a classe que torna o elemento visível
                     entry.target.classList.add('is-visible');
+                    // Para de observar o elemento (para a animação não repetir)
                     observer.unobserve(entry.target);
                 }
             });
         }
 
+        // Cria o observador
         const observer = new IntersectionObserver(handleIntersection, observerOptions);
 
+        // Manda o observador "assistir" cada um dos nossos elementos
         fadeElements.forEach(el => {
             observer.observe(el);
         });
