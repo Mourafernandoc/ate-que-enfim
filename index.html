@@ -257,8 +257,8 @@
 <body>
 
     <div id="prompt-senha">
-        <h1>🔒 Você Tem a Chave?</h1>
-        <p style="font-size: 1.2rem; color: #fdfaf0;">Digite o PIN que eu te dei para abrir esta carta:</p>
+        <h1>🔒 A chave esta no seu coração (aumente o volume...)</h1>
+        <p style="font-size: 1.2rem; color: #fdfaf0;">O nosso dia:</p>
         <input type="password" id="pin-input">
         <button id="pin-button" onclick="verificarSenha()">Abrir Carta</button>
     </div>
@@ -271,7 +271,14 @@
         </audio>
 
         <section class="section text-block">
-            <p classs="fade-in">Eu quero começar essa carta dizendo que não é justo... você me manda mensagem, fala o que você quer e me bloqueou... sem me dar direito de resposta... e a minha é essa...</p>
+            <p classs="fade-in">Antes**“Antes de qualquer coisa, eu quero que você leia isso com calma.
+Não escrevo pra pressionar, nem pra cobrar nada.
+Escrevo porque você fala, some, bloqueia… e eu fico sem direito de resposta.
+E ficar em silêncio quando algo é importante não é do meu jeito.
+
+Então, por respeito ao que fomos — e ao que ainda existe aí dentro, mesmo que você não admita — eu só quero deixar claro o que eu realmente penso.
+Sem briga, sem cobrança, sem disputa.
+Apenas a verdade de alguém que aprendeu a se expressar com maturidade.”**</p>
 
             <div class="photo-container fade-in">
                 <img src="imagens/abertura_1.jpg" alt="Foto de Abertura" class="carta-foto">
@@ -435,7 +442,7 @@
         // --- SCRIPT PARA VERIFICAÇÃO DE SENHA E MÚSICA ---
         function verificarSenha() {
             // ⚠️ ALtere "1234" pela senha/PIN que você quer usar!
-            const SENHA_CORRETA = "1234";
+            const SENHA_CORRETA = "1808";
             const senhaDigitada = document.getElementById("pin-input").value;
             
             const musica = document.getElementById("musicaFundo"); 
