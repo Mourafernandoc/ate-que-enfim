@@ -31,6 +31,13 @@
             line-height: 1.8; 
         }
 
+        /* --- AJUSTES MOBILE-FIRST --- */
+        
+        .section {
+            /* No celular, reduz o padding para usar mais tela */
+            padding: 10% 5%; 
+        }
+
         /* --- ESTILOS NOVOS PARA SENHA, FOTOS E VÍDEO --- */
 
         #prompt-senha {
@@ -88,7 +95,7 @@
             max-width: 100%; 
             height: auto;
             border-radius: 10px; 
-            margin: 0; /* Removido para o carrossel, mas mantido para o vídeo */
+            margin: 0;
             display: block; 
             object-fit: cover;
             width: 100%; 
@@ -100,7 +107,7 @@
             margin-bottom: 20px;
             max-width: 700px; 
             width: 100%;
-            margin: 30px auto; /* Centraliza containers fora do carrossel */
+            margin: 30px auto; 
         }
 
         .photo-caption {
@@ -110,18 +117,19 @@
             margin-top: 10px;
         }
         
-        /* --- CSS para o Carrossel (Horizontal Scrolling) --- */
+        /* --- CSS para o Carrossel (Horizontal Scrolling com SNAP) --- */
         .carousel-container {
             display: flex;
-            overflow-x: auto;
-            /* Melhora o deslizamento no iOS */
+            /* Permite o deslizamento com "travamento" (SNAP) */
+            overflow-x: scroll; 
+            scroll-snap-type: x mandatory; 
+            
             -webkit-overflow-scrolling: touch; 
-            /* Remove a barra de rolagem (opcional) */
             scrollbar-width: none; 
             
-            padding: 20px 10px;
-            margin: 20px auto;
-            max-width: 100%; /* Largura total para melhor experiência */
+            padding: 20px 0; /* Removido padding lateral para ocupar 100% da tela */
+            margin: 20px 0;
+            width: 100%; 
             
             border-top: 2px solid #FFC30050;
             border-bottom: 2px solid #FFC30050;
@@ -135,14 +143,20 @@
 
         .carousel-container .photo-item {
             flex-shrink: 0;
-            width: 300px; /* Largura padrão para cada foto do carrossel */
-            margin-right: 20px;
+            /* Faz com que cada item ocupe a largura da tela menos as margens */
+            width: 90%; 
+            margin: 0 5%; /* Centraliza o item na tela visível */
+            
+            /* Define o ponto de travamento do scroll */
+            scroll-snap-align: center; 
+            
             text-align: center;
         }
 
         .carousel-container .carta-foto {
             width: 100%;
-            height: 250px; /* Altura uniforme para as fotos deslizáveis */
+            /* Altura ideal para celular, não muito alta */
+            height: 300px; 
             object-fit: cover;
             margin: 0; 
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
@@ -154,7 +168,6 @@
         .section {
             min-height: 100vh;
             width: 100%;
-            padding: 10% 12%; 
             display: flex;
             flex-direction: column;
             justify-content: center;
