@@ -93,12 +93,14 @@
         /* Estilo para a imagem e o player de VÍDEO na carta */
         .carta-foto {
             max-width: 100%; 
-            height: auto;
+            height: 400;
             border-radius: 10px; 
             margin: 0;
             display: block; 
-            object-fit: cover;
-            width: 100%; 
+            object-fit: contain;
+            width: 100%;
+            border: none;
+            box-shadow: none; 
         }
 
         /* Container para centralizar e adicionar legenda */
@@ -144,23 +146,25 @@
         .carousel-container .photo-item {
             flex-shrink: 0;
             /* Faz com que cada item ocupe a largura da tela menos as margens */
-            width: 90%; 
-            margin: 0 5%; /* Centraliza o item na tela visível */
+            width: 95%; 
+            margin: 0 2.5%; /* Centraliza o item na tela visível */
             
             /* Define o ponto de travamento do scroll */
             scroll-snap-align: center; 
             
             text-align: center;
+            background-color: #3a2d0b;
+            padding: 10px 0;
         }
 
         .carousel-container .carta-foto {
             width: 100%;
             /* Altura ideal para celular, não muito alta */
-            height: 300px; 
-            object-fit: cover;
+            height: 400px; 
+            object-fit: contain;
             margin: 0; 
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
-            border: 3px solid #FFC300; 
+            box-shadow: none;
+            border: none; 
         }
 
         /* --- SEUS ESTILOS ORIGINAIS DE SEÇÃO --- */
@@ -271,7 +275,7 @@
 
             <div class="photo-container fade-in">
                 <img src="imagens/abertura_1.jpg" alt="Foto de Abertura" class="carta-foto">
-                <p class="photo-caption">Descrição da foto de abertura...</p>
+                <p class="photo-caption">Aqui uma certeza estava invandindo meu peito... era você</p>
             </div>
         </section>
 
@@ -284,16 +288,9 @@
                 <div class="carousel-container fade-in">
                     <div class="photo-item">
                         <img src="imagens/reencontro_1.jpg" alt="Foto Reencontro 1" class="carta-foto">
-                        <p class="photo-caption">Aquele dia do sushi que mudou tudo (1/3)</p>
+                        <p class="photo-caption">um sorriso em meio ao caos que me convencia que o certo era te esquecer</p>
                     </div>
-                    <div class="photo-item">
-                        <img src="imagens/reencontro_2.jpg" alt="Foto Reencontro 2" class="carta-foto">
-                        <p class="photo-caption">O sorriso frouxo no carro (2/3)</p>
-                    </div>
-                    <div class="photo-item">
-                        <img src="imagens/reencontro_3.jpg" alt="Foto Reencontro 3" class="carta-foto">
-                        <p class="photo-caption">A faísca que não podíamos negar (3/3)</p>
-                    </div>
+                    
                 </div>
                 <p>...admito que o que eu iria te dizer era algo totalmente diferente... eu não iria me declarar, eu queria ver como você estava, já que nas suas fotos de Insta e status eu não via mais o brilho no seu olhar, aquele jardim de girassóis que sempre brilham com o amanhecer... pelo contrário, era um sorriso triste, trancado, estressado...</p>
                 <p>...quando marquei de te buscar para o sushi... encontrei uma menina que estava com o escudo baixo, os portões abertos, o sorriso frouxo... e isso me despertou uma vontade para ver até onde esse sorriso nos levaria.</p>
@@ -309,7 +306,7 @@
                 
                 <div class="photo-container fade-in">
                     <img src="imagens/verdade_1.jpg" alt="Foto da Verdade" class="carta-foto">
-                    <p class="photo-caption">A foto que mostra a cumplicidade entre nós...</p>
+                    <p class="photo-caption">O olhar que montra cumplicidade entre nós...</p>
                 </div>
                 
                 <p>Você se conhece e eu te conheço, você iria se abalar assim? Se já não houvesse dúvidas no que você anda fazendo? Não vou pontuar pontos negativos no seu relacionamento, até porque isso não condiz a mim, mas você sabe que entre nós existiam e existem mais positivos que negativos.</p>
@@ -324,19 +321,19 @@
             <div class="carousel-container fade-in">
                 <div class="photo-item">
                     <img src="imagens/memorias_1.jpg" alt="Memória 1" class="carta-foto">
-                    <p class="photo-caption">O dia que fomos às compras/barsinho...</p>
+                    <p class="photo-caption">Sair com você era a certeza do melhor dueto da minha vida...(1/4)</p>
                 </div>
                 <div class="photo-item">
                     <img src="imagens/memorias_2.jpg" alt="Memória 2" class="carta-foto">
-                    <p class="photo-caption">Nosso mesversário/momento no sofá...</p>
+                    <p class="photo-caption">Um sorriso que fez nascer o meu sorriso(2/4</p>
                 </div>
                 <div class="photo-item">
                     <img src="imagens/memorias_3.jpg" alt="Memória 3" class="carta-foto">
-                    <p class="photo-caption">As risadas na cozinha/academia...</p>
+                    <p class="photo-caption">comemorações se toranaram rotinas e você me ensinou a comemorar as coisas boas da vida(3/4)</p>
                 </div>
                 <div class="photo-item">
                     <img src="imagens/memorias_4.jpg" alt="Memória 4" class="carta-foto">
-                    <p class="photo-caption">A família reunida/nosso apoio...</p>
+                    <p class="photo-caption">Meus melhores presentes, Você.. uma cesta.. e uma cuscuzeira( que eu ainda a tenho )(4/4)</p>
                 </div>
             </div>
             <div class="fade-in text-block">
@@ -356,12 +353,12 @@
                 
                 <div class="carousel-container fade-in">
                     <div class="photo-item">
-                        <img src="imagens/em_voce_1.jpg" alt="Foto sobre ela 1" class="carta-foto">
-                        <p class="photo-caption">A mãe guerreira e dedicada (1/2)</p>
+                        <img src="imagens/em_voce_1.png" alt="Foto sobre ela 1" class="carta-foto">
+                        <p class="photo-caption">Um certificado que poucas conseguem (1/2)</p>
                     </div>
                     <div class="photo-item">
-                        <img src="imagens/em_voce_2.jpg" alt="Foto sobre ela 2" class="carta-foto">
-                        <p class="photo-caption">O dia da sua coroação/evolução profissional (2/2)</p>
+                        <img src="imagens/em_voce_2.png" alt="Foto sobre ela 2" class="carta-foto">
+                        <p class="photo-caption">Como ser rica daquilo que não tem preço? Você sabe..(2/2)</p>
                     </div>
                 </div>
                 <p>A importância que você tinha com seu trabalho... você luta, você batalha, e se emociona quando recebe um elogio de um bom trabalho, quer evoluir sempre e sempre mais... (que lembro como chorou emocionada) e saber como seu trabalho é importante para você e satisfatório para mim.</p>
@@ -379,15 +376,15 @@
                 <div class="carousel-container fade-in">
                     <div class="photo-item">
                         <img src="imagens/brilho_dourado_1.jpg" alt="Foto Brilho Dourado 1" class="carta-foto">
-                        <p class="photo-caption">Aquele olhar, aquele dia (1/3)</p>
+                        <p class="photo-caption">A alegria por perceber o quanto era querida (1/3)</p>
                     </div>
                     <div class="photo-item">
                         <img src="imagens/brilho_dourado_2.jpg" alt="Foto Brilho Dourado 2" class="carta-foto">
-                        <p class="photo-caption">O abraço dos meninos e o amor que viram (2/3)</p>
+                        <p class="photo-caption">A beleza que só uma filha do ouro pode ter (2/3)</p>
                     </div>
                     <div class="photo-item">
                         <img src="imagens/brilho_dourado_3.jpg" alt="Foto Brilho Dourado 3" class="carta-foto">
-                        <p class="photo-caption">A leveza do nosso amor (3/3)</p>
+                        <p class="photo-caption">O sorriso que sempre me reconquistou (3/3)</p>
                     </div>
                 </div>
                 <p>...músicas que contam a minha história, a sua história... mas todas contam a nossa história, mesmo que você tente colocar outros personagens, a história é nossa.</p>
@@ -427,7 +424,7 @@
                     <source src="imagens/video_conclusao.mp4" type="video/mp4">
                     Seu navegador não suporta a reprodução de vídeo.
                 </video>
-                <p class="photo-caption" style="margin-top: 15px;">Assista a nossa conclusão. Eu te amo!</p>
+                <p class="photo-caption" style="margin-top: 15px;">você queria saber para que eu gravei? pra te mostrar que eu sou o unico que sei como trazer esse sorriso ao brilho. Eu te amo!</p>
             </div>
             
             <p class="fade-in" style="margin-top: 30px; font-style: italic;">Acho que acabou o meu desabafo...</p>
